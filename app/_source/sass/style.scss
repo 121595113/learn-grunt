@@ -1,37 +1,10 @@
 @import "compass";
-html,body{
-    height: 100%;
-}
+$designWidth:720;
+$reset:true;
+@import "moblie-mixin";
 body{
-  margin: 0;
-}
-.wrapper {
-    display: flex;
-    height: 100%;
-    flex-direction:column;
-    justify-content:space-between;
-}
-p {
-    font-size: 30px;
-}
-span{
-    color: rgba(255,0,0, .5);
-}
-%a{
-   display: flex;
-   height: 80px;
-   flex-direction:row;
-   justify-content:center;
-   align-items:center; 
-   color: #fff;
-}
-header{
-    @extend %a;
-    background: red;
-}
-footer{
-    @extend %a;
-    background: blue;
+  width: rem-calc(720);
+  background: yellow
 }
 
 

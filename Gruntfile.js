@@ -24,12 +24,7 @@ module.exports = function(grunt) {
                 src: [
                     '{,*/}*.html',
                 ],
-                // src: [
-                //   '*.{ico,png,txt}',
-                //   'images/{,*/}*.webp',
-                //   '{,*/}*.html',
-                //   'styles/fonts/{,*/}*.*'
-                // ]
+
             },
         },
 
@@ -55,6 +50,7 @@ module.exports = function(grunt) {
         compass: {
             development: {
                 options: {
+                    importPath:'<%= config.app %>/_source/_function/',
                     sassDir: '<%= config.app %>/_source/sass/',
                     cssDir: '<%= config.app %>/css/',
                     imagesDir: '<%= config.app %>/images/',
@@ -111,7 +107,12 @@ module.exports = function(grunt) {
                     cwd: '<%= config.app %>',
                     src: '*.{ico,png}',
                     dest: '<%= config.dist %>'
-                }]
+                },{
+                    expand: true,
+                    cwd: '<%= config.app %>/pic/',
+                    src: '{,*/}*.{gif,jpeg,jpg,png}',
+                    dest: '<%= config.dist %>/pic/'
+                } ]
             }
         },
 
@@ -180,7 +181,7 @@ module.exports = function(grunt) {
             options: {
               files: [
                 '<%= config.app %>/{,*/}*.html',
-                '<%= config.app %>/{,*/}*.css',
+                '<%= config.app %>/**/*.css',
                 '<%= config.app %>/images/{,*/}*',
                 '<%= config.app %>/{,*/}*.js'
               ],

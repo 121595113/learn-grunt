@@ -1,0 +1,16 @@
+$designWidth: 750 !default;
+@function px2rem($px, $base-value:$designWidth) {
+    @return $px*320/$base-value/20 + rem;
+}
+
+@function rem-calc($values, $base-value:$designWidth) {
+    $max: length($values);
+    @if $max==1 {
+        @return px2rem(nth($values, 1), $base-value);
+    }
+    $remValues: ();
+    @for $i from 1 through $max {
+        $remValues: append($remValues, px2rem(nth($values, $i), $base-value));
+    }
+    @return $remValues;
+}
