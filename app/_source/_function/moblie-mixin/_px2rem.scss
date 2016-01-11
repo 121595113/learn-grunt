@@ -1,6 +1,19 @@
 $designWidth: 750 !default;
+$modules: () !default;
+@mixin exports($name) {
+    @if (index($modules, $name)==null) {
+        $modules: append($modules, $name) !global;
+        @content;
+    }
+}
+
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}
+
+
 @function px2rem($px, $base-value:$designWidth) {
-    @return $px*320/$base-value/20 + rem;
+    @return strip-unit($px)*320/strip-unit($base-value)/20 + rem;
 }
 
 @function rem-calc($values, $base-value:$designWidth) {

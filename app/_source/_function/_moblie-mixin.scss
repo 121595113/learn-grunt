@@ -5,5 +5,6 @@
 //   $Response:false;
 // 其他模块默认全部引入，没有开关功能
 @import "moblie-mixin/reset";
-@import "moblie-mixin/px2rem";
+@import "moblie-mixin/rem-calc";
+@import "moblie-mixin/Response";
 @import "moblie-mixin/rem-sprites";

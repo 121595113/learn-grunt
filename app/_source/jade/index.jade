@@ -1,9 +1,11 @@
 extends ./layout/layout
 block append head
 	title 手机助手首页
+	link(rel='stylesheet',href='css/swiper.min.css')
 	link(rel='stylesheet',href='css/style.css')
 	
 block content
-	p 你好呢，呵呵
-	div #{course.toUpperCase()}
-	span 呵
+	include ./components/swiper
+block script
+	script(src='script/Require.js',data-main='script/index.js')
+		

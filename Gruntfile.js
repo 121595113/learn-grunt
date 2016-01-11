@@ -34,7 +34,6 @@ module.exports = function(grunt) {
             },
             server: {
                 src: [
-                    '<%= config.app %>/css',
                     '<%= config.app %>/{,*/}*.html',
                     '<%= config.dist %>/css',
                     '<%= config.dist %>/images',
@@ -183,7 +182,7 @@ module.exports = function(grunt) {
                 '<%= config.app %>/{,*/}*.html',
                 '<%= config.app %>/**/*.css',
                 '<%= config.app %>/images/{,*/}*',
-                '<%= config.app %>/{,*/}*.js'
+                '<%= config.app %>/**/*.js'
               ],
               port: 9000,
               server: {

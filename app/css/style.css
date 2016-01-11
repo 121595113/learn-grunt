@@ -82,7 +82,118 @@ a {
 }
 
 body {
-  width: 16rem;
-  background: yellow;
+  max-width: 720px;
+  margin: 0 auto;
+  padding-bottom: 3.66667rem;
 }
+
+.swiper-container .swiper-slide img {
+  width: 100%;
+  vertical-align: top;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+}
+.footer .nav {
+  max-width: 720px;
+  width: 100%;
+  height: 3.66667rem;
+  margin: 0 auto;
+  border-top: 1px solid #edf2f5;
+  background: #fafbfc;
+}
+.footer .nav ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.footer .nav li {
+  width: 20%;
+  text-align: center;
+}
+.footer .nav li a {
+  display: block;
+}
+.footer span {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.18519rem;
+}
+.footer p {
+  font-size: 0.74074rem;
+  color: #999;
+}
+.footer .active p {
+  color: #26bf80;
+}
+.footer .bar-recommend span, .footer .bar-recommend.active span, .footer .bar-find span, .footer .bar-find.active span, .footer .bar-game span, .footer .bar-game.active span, .footer .bar-manage span, .footer .bar-manage.active span, .footer .bar-software span, .footer .bar-software.active span {
+  background: url('../images/bar-s26651142fa.png');
+  background-size: 2rem 19.48148rem;
+  background-repeat: no-repeat;
+}
+.footer .bar-recommend span {
+  width: 2rem;
+  height: 1.81481rem;
+  background-position: 0 -11.77778rem;
+}
+.footer .bar-recommend.active span {
+  width: 2rem;
+  height: 1.81481rem;
+  background-position: 0 -13.74074rem;
+}
+.footer .bar-find span {
+  width: 2rem;
+  height: 1.81481rem;
+  background-position: 0 0;
+}
+.footer .bar-find.active span {
+  width: 2rem;
+  height: 1.81481rem;
+  background-position: 0 -1.96296rem;
+}
+.footer .bar-game span {
+  width: 2rem;
+  height: 1.81481rem;
+  background-position: 0 -3.92593rem;
+}
+.footer .bar-game.active span {
+  width: 2rem;
+  height: 1.81481rem;
+  background-position: 0 -5.88889rem;
+}
+.footer .bar-manage span {
+  width: 2rem;
+  height: 1.81481rem;
+  background-position: 0 -7.85185rem;
+}
+.footer .bar-manage.active span {
+  width: 2rem;
+  height: 1.81481rem;
+  background-position: 0 -9.81481rem;
+}
+.footer .bar-software span {
+  width: 2rem;
+  height: 1.81481rem;
+  background-position: 0 -15.7037rem;
+}
+.footer .bar-software.active span {
+  width: 2rem;
+  height: 1.81481rem;
+  background-position: 0 -17.66667rem;
+}
+
 /*# sourceMappingURL=style.css.map */
