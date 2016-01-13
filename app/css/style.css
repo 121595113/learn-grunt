@@ -81,15 +81,165 @@ a {
   color: #999;
 }
 
+@media only screen {
+  html {
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 479px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 639px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 640px) {
+  html {
+    font-size: 24px;
+  }
+}
+.hot-icon01, .hot-icon02, .hot-icon03, .hot-icon04, .hot-icon05 {
+  background: url('../images/hot-s7f290b5b3c.png');
+  background-size: 2.59259rem 13.55556rem;
+  background-repeat: no-repeat;
+}
+.hot-icon01 {
+  width: 2.59259rem;
+  height: 2.59259rem;
+  background-position: 0 0;
+}
+
+.hot-icon02 {
+  width: 2.59259rem;
+  height: 2.59259rem;
+  background-position: 0 -2.74074rem;
+}
+
+.hot-icon03 {
+  width: 2.59259rem;
+  height: 2.59259rem;
+  background-position: 0 -5.48148rem;
+}
+
+.hot-icon04 {
+  width: 2.59259rem;
+  height: 2.59259rem;
+  background-position: 0 -8.22222rem;
+}
+
+.hot-icon05 {
+  width: 2.59259rem;
+  height: 2.59259rem;
+  background-position: 0 -10.96296rem;
+}
+
 body {
   max-width: 720px;
   margin: 0 auto;
   padding-bottom: 3.66667rem;
+  background: #edf2f5;
 }
 
 .swiper-container .swiper-slide img {
   width: 100%;
   vertical-align: top;
+}
+.swiper-container .zhezhao {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: 9;
+  height: 0;
+  padding-top: 3.33333%;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAtAAAAAYCAYAAADTc8psAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDplNzgzMWMyMS0xMTYzLWE0NDctODVkMi04MjY4NDUyMmI1Y2EiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OTAwRjc5ODhCMjI1MTFFNTgyQjFGMjVBMDQ5MDFDQTAiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OTAwRjc5ODdCMjI1MTFFNTgyQjFGMjVBMDQ5MDFDQTAiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OGMzMTA0Y2QtOGI3OC00ZTQxLTlkNGItNjYyZmVlYjE1YTcyIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOmU3ODMxYzIxLTExNjMtYTQ0Ny04NWQyLTgyNjg0NTIyYjVjYSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pi/pDaoAAARiSURBVHja7N17U9NaFIbxXZAWUe4iRRBRz/f/RMdzPFJFLkqLgJXryZq8e7JmTygUwyX2+c2syU7agsb+8ZAJtnGZCbnzbDaz+ZDN35oPbv84AAAAAKOllc27bP7K5r1tGy6gr/M5CWrb/qvZ5dwCAACgpmZcIL/XOkbzWjYN/+RhAnqQHy6m/ylZ/+TfBQAAAA9kIpv1bN6WjIXy0jBfrKqAvs5WEtQ+sjvZXPDvCgAAgFuyK8QrLog33NaO2VXk8cq+2T0F9CAn2XzSfNTWwvo/jQX2Ge8LAACAkdbO5k3IryRvuDh+q/XkvdX6Iwjo69gvN34uCWs/v3hPAQAA1NaTkF8lXlckb7h1jObJx/KHrUNA34TdIvJRkb2p8esd3pcAAAAPZsqF8JuSUF4NFd5iQUBXo6+Q7ri47mjibSJd3tsAAABDsyvDr0N+Bfm1gnhNY5H8KpuFP+kvPCoBfROHobhqHQPbtlsutnucJgAAMEKaIb86HGM4hvG6Ytni+OWonRQCejhHiuovIb8ve1PrjkLbjm2H/L5tAACAx2xWMbyqEI5B7I8tc5oI6PtwroiOUW2R/VX7O25rw7kHAABVe6oAXlEML2vbViS3tT/FqSKg6+ZUER2vWn9RaG9pva3HdvRcAAAw2hYVv23FsW3jLRSrCmU7PsepIqBH3WUorlh3kujeVWzv6vgepwsAgFpphfxT8OLtEm23jnG8pm2L00VAo3qnimmL66/JOkb4lo7bcK82AADVmw75leAlTVtBHNcvtbZj85wuAhr1ceFCOgb2npttt97VlvcKAGAU2T3FL0J+C8Wy1ksK4bYL5RUdm+SUEdBADO69KyI7BvaOW38LfEIkAOBxepGMD+OyY884ZSCgcV/s/9b+rpj+prCO+/54egwAgJsYV+j6WdA2hnC6vxhq9Il3IKCBm7i4IrL3k+mWHOtz+gCglmZCfi/wnGZes6Dx60W3nuHUgYAGfk//msjuJuuDkH+65L7W/FIlANxO0wVwGsLper7k+BinEAQ0UE+HLqrjtqfY7pU8dqDHYozbcN83gLqxiJ0pGTs+q/XsgMds+KU5ENAAbu0smx8KbAvyI+13tU73DzVd93y/f8IpBZCwcH2msXiddvsWts/dvl3dndJ62r122oUxAAIa+KNcKMZ/huIWFbvKfazjv1yE2+MHeqyvCO/rtT2tY8SfKOTPOMVA5ZouUpuKVPtv0Ca1bilyn+vxOT32VFHbclHcLIlgAAQ0gAfWU6h33fZcMX4aiivhRy7Ij128n7ooj1fgQyjuK4+vDfral+4HAuCuxPgcC8VV1inFaSMUH3VsETuhMH3ithay43rtmNvOudc3QvEhGPPJ1wVAQAPAnbhUVIcrItzHt9l36xjv6fP810yfF38wSJX9Emm80n/VnzcVfzgYRvxBpCotReJtDPo0tBiTXrxiOuj7p8+JERpCcZW27HvEkA1J5PqvMaHjwUVv+joAuBP/CzAA0Fq0XVRp7zsAAAAASUVORK5CYII=') no-repeat;
+  background-size: 100% 100%;
+  pointer-events: none;
+}
+
+.hot-tab {
+  background: #fff;
+}
+.hot-tab .contain {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  padding: 0.55556rem 0;
+  text-align: center;
+}
+.hot-tab .contain li {
+  width: 20%;
+}
+.hot-tab .contain div {
+  margin: 0 auto;
+}
+.hot-tab .contain p {
+  font-size: 0.88889rem;
+  margin-top: 0.18519rem;
+  color: #999;
+}
+
+.module {
+  margin-top: 0.74074rem;
+  background: #fff;
+}
+.module .title {
+  padding: 0.92593rem 1.11111rem;
+  font-size: 1.03704rem;
+  color: #999;
+}
+.module .content {
+  padding: 0 1.11111rem;
+}
+.module .btn {
+  font-size: 0.88889rem;
+  height: 1.77778rem;
+  line-height: 1.77778rem;
+  white-space: nowrap;
+}
+.module .block {
+  padding: 0 0.92593rem;
+  border: 1px solid #79d8b1;
+  border-radius: 1.77778rem;
+}
+
+section.bibei .content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 1.11111rem;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+section.bibei .list-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+section.bibei .list-box a {
+  display: inline-block;
+  margin-right: 0.74074rem;
+}
+section.bibei .list-box a:last-of-type {
+  margin-right: 0;
+}
+section.bibei .list-box img {
+  width: 2.14815rem;
+  height: 2.14815rem;
+}
+section.bibei .btn {
+  margin-left: auto;
 }
 
 .footer {
@@ -124,6 +274,9 @@ body {
 .footer .nav li {
   width: 20%;
   text-align: center;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
 }
 .footer .nav li a {
   display: block;

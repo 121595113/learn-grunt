@@ -1,1 +1,5 @@
 $bar: sprite-map("bar/*.png", $spacing: 4px);
+
+// hot-tab
+$hot:sprite-map("hot/*.png",$spacing: 4px);
+@include rem-sprites($hot);

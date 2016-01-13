@@ -1,12 +1,14 @@
 @import "compass";
 $rem-base:27;
 $reset:true;
+$Response:true;
 @import "moblie-mixin";
 @import "components/sprites";
 body {
     max-width: 720px;
     margin: 0 auto;
     padding-bottom: rem-calc(99);
+    background: #edf2f5;
 }
 
 // banner
@@ -17,8 +19,89 @@ body {
             vertical-align: top;
         }
     }
+    .zhezhao{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        z-index: 9;
+        height: 0;
+        padding-top: percentage(24/720);
+        background: inline-image('zhezhao.png') no-repeat;
+        background-size: 100% 100%;
+        pointer-events:none;
+    }
 }
-
+// hot-tab
+.hot-tab{
+    background: #fff;
+    .contain{
+        display: flex;
+        justify-content: space-around;
+        padding: rem-calc(15 0);
+        text-align: center;
+        li{
+            width: percentage(1/5);
+        }
+        div{
+            margin: 0 auto;
+        }
+        p{
+            font-size: rem-calc(24);
+            margin-top: rem-calc(5);
+            color: #999;
+        }
+    }
+}
+.module{
+    margin-top: rem-calc(20);
+    background: #fff;
+    .title{
+        padding: rem-calc(25 30);
+        font-size: rem-calc(28);
+        color: #999;
+    }
+    .content{
+        padding: rem-calc(0 30);
+    }
+    .btn{
+        font-size: rem-calc(24);
+        height: rem-calc(48);
+        line-height: rem-calc(48);
+        white-space: nowrap;
+    }
+    .block{
+        padding: rem-calc(0 25);
+        border:1px solid #79d8b1;
+        border-radius: rem-calc(48);
+    }
+}
+// 装机必备
+section.bibei{
+    .content{
+        display: flex;
+        padding-bottom: rem-calc(30);
+        align-items:center;
+    }
+    .list-box{
+        display: flex;
+        a{
+            // float: left;
+            display: inline-block;
+            margin-right: rem-calc(20);
+            &:last-of-type{
+                margin-right: 0;
+            }
+        }
+        img{
+            width: rem-calc(58);
+            height: rem-calc(58);
+        }
+    }
+    .btn{
+        margin-left: auto;
+    }
+}
 // 底部操作栏
 .footer {
     position: fixed;
@@ -42,6 +125,7 @@ body {
         li {
             width: percentage(1/5);
             text-align: center;
+            align-content:center;
             a {
                 display: block;
             }

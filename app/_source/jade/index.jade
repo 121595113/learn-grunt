@@ -6,6 +6,40 @@ block append head
 	
 block content
 	include ./components/swiper
+	//- 热门标签
+	section.hot-tab
+		ul.contain
+			li: a(href='javascript:;')
+				div.hot-icon01
+				p 礼包
+			li: a(href='javascript:;')
+				div.hot-icon02
+				p 新游
+			li: a(href='javascript:;')
+				div.hot-icon03
+				p 单机
+			li: a(href='javascript:;')
+				div.hot-icon04
+				p 热门
+			li: a(href='javascript:;')
+				div.hot-icon05
+				p 专题
+	//- 装机必备
+	section.module.bibei
+		h2.title 装机必备
+		div.content
+			div.list-box
+				a(href='#')
+					img(src='images/pic/bibei/01.png')
+				a(href='#')
+					img(src='images/pic/bibei/02.png')
+				a(href='#')
+					img(src='images/pic/bibei/03.png')
+				a(href='#')
+					img(src='images/pic/bibei/04.png')
+				a(href='#')
+					img(src='images/pic/bibei/05.png')
+			button.btn.block 一键下载
 block script
 	script(src='script/Require.js',data-main='script/index.js')
 		
