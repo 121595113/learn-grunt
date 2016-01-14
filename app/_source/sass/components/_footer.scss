@@ -1,0 +1,74 @@
+.focus{
+  .footer {
+    opacity:0;
+    pointer-events:none;
+  } 
+}
+.footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    .nav {
+        max-width: 720px;
+        width: 100%;
+        height: rem-calc(99);
+        margin: 0 auto;
+        border-top: 1px solid #edf2f5;
+        background: #fafbfc;
+        ul {
+            display: flex;
+            height: 100%;
+            justify-content: space-around;
+            align-items:center;
+        }
+        li {
+            width: percentage(1/5);
+            text-align: center;
+            align-content:center;
+            a {
+                display: block;
+            }
+        }
+    }
+    span {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: rem-calc(5);
+    }
+    p {
+        font-size: rem-calc(20);
+        color: #999;
+    }
+    .active{
+      p{
+        color: #26bf80;
+      }
+    }
+    @mixin _bar($name) {
+      span {
+          @include rem-sprite($bar, $name, true);
+      }
+      &.active {
+          span {
+              @include rem-sprite($bar, #{$name}_active);
+          }
+      }
+    }
+    .bar-recommend {
+        @include _bar(recommend);
+    }
+    .bar-find {
+        @include _bar(find);
+    }
+    .bar-game {
+        @include _bar(game);
+    }
+    .bar-manage {
+        @include _bar(manage);
+    }
+    .bar-software {
+        @include _bar(software);
+    } 
+}

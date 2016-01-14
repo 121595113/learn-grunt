@@ -3,8 +3,14 @@ block append head
 	title 手机助手首页
 	link(rel='stylesheet',href='css/swiper.min.css')
 	link(rel='stylesheet',href='css/style.css')
-	
+
 block content
+	header.header
+		div.search-box
+			label.logo 
+			div.inner-box
+				input(type='search',id='search',placeholder='大家都在搜：开心消消乐')
+				button.QR 
 	include ./components/swiper
 	//- 热门标签
 	section.hot-tab
