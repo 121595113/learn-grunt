@@ -81,6 +81,7 @@ section.bibei{
     .content{
         display: flex;
         padding-bottom: rem-calc(30);
+        justify-content: space-between;
         align-items:center;
     }
     .list-box{
@@ -99,7 +100,11 @@ section.bibei{
         }
     }
     .btn{
-        margin-left: auto;
+        color: #79d8b1;
+        &:active{
+            background: #79d8b1;
+            color: #fff;
+        }
     }
 }
 // 底部操作栏
