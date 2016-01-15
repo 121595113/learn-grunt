@@ -31,25 +31,44 @@
                 $(this).addClass('active').siblings().removeClass('active')
             })
 
-            // 
-
+            // 解决弹出输入框的底部操作栏紧跟虚拟键盘的bug
             var wh = $(window).height();
-
             $(window).on('resize', function() {
                 var newH = $(window).height();
                 if (window.orientation == 90 || window.orientation == -90) {
                     // expression
                 } else {
-                    console.log(wh, newH);
-                    if (wh > newH) {
+                    var poor = Math.abs(wh - newH);
+                    if (wh > newH && poor > 100) {
                         $('body').addClass('focus');
                     } else {
                         $('body').removeClass('focus');
                     }
-                    // $('#search').val(wh + ' ' + newH)
+                    // $('#search').val(wh - newH)
                     wh = newH;
                 }
             })
+
+            // 监听滚动事件
+            var searchbox = $('#search').parents('.search-box');
+            $(document).on('scroll', function(event) {
+                event.preventDefault();
+                var _scrollTop = $('body').scrollTop() || $('html').scrollTop();
+                if (_scrollTop >= 80) {
+                    _scrollTop = 80;
+                }
+                if (_scrollTop >= 0) {
+                    searchbox.css({
+                        'background': 'rgba(38,191,128,' + _scrollTop / 100 + ')'
+                    })
+                }else{
+                    var val=-_scrollTop/100>1.2?1.2:-_scrollTop/100;
+                    $('.bg-text').css({
+                        'transform': 'scale('+ val+')'
+                    })
+                }
+
+            });
 
         })
     })

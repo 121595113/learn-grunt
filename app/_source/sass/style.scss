@@ -3,7 +3,7 @@ $rem-base:27;
 $reset:true;
 $Response:true;
 @import "moblie-mixin";
-@import "components/sprites","components/common";
+@import "components/sprites","components/common","components/themes";
 html{
     background: #edf2f5;
 }
@@ -13,6 +13,17 @@ body {
     padding-bottom: rem-calc(99);
     min-height: 100%;
 }
+// 背景文案
+.bg-text{
+    position: fixed;
+    top: rem-calc(100);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    text-align: center;
+    color: #999;
+    transform:scale(0);
+}
 // 搜索框
 .search-box{
     position: fixed;
@@ -21,7 +32,6 @@ body {
     left: 0;
     z-index: 9;
     max-width: 720px;
-    height: rem-calc(70);
     padding: rem-calc(12 24);
     box-sizing:border-box;
     margin: 0 auto;
@@ -38,6 +48,7 @@ body {
         height: rem-calc(70);
         border-radius: rem-calc(70);
         background: rgba(255, 255, 255, .5);
+        overflow: hidden;
     }
     [type=search]{
         height: rem-calc(70);
@@ -125,30 +136,72 @@ body {
 .module{
     margin-top: rem-calc(20);
     background: #fff;
-    .title{
+    .b-title{
         padding: rem-calc(25 30);
         font-size: rem-calc(28);
         color: #999;
-    }
-    .content{
-        padding: rem-calc(0 30);
     }
     .btn{
         font-size: rem-calc(24);
         height: rem-calc(48);
         line-height: rem-calc(48);
         white-space: nowrap;
+        color: $btn-color;
+        &:active{
+            background: $btn-color;
+            color: #fff;
+        }
     }
     .block{
         padding: rem-calc(0 25);
-        border:1px solid #79d8b1;
+        border:1px solid $btn-color;
         border-radius: rem-calc(48);
+    }
+    .preview-list{
+        .item{
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+            padding: rem-calc(30 30);
+            border-top: 1px solid $line-color;
+        }
+        .inner-box{
+            display: flex;
+        }
+    }
+    // 缩略图
+    .preview{
+        border-radius: rem-calc(10);
+        img{
+            width: rem-calc(110);
+            height: rem-calc(110);
+            vertical-align: top;
+        }
+    }
+    // app描述
+    .description{
+        padding-left: rem-calc(27);
+        h3{
+            font-size: rem-calc(32);
+            color: #000;
+        }
+        .p1{
+            line-height: rem-calc(30);;
+            font-size: rem-calc(24);
+            color: #999;
+        }
+        .p2{
+            line-height: rem-calc(30);;
+            font-size: rem-calc(24);
+            color: #666;
+        }
     }
 }
 // 装机必备
 section.bibei{
-    .content{
+    .b-content{
         display: flex;
+        padding: rem-calc(0 30);
         padding-bottom: rem-calc(30);
         justify-content: space-between;
         align-items:center;
@@ -163,17 +216,12 @@ section.bibei{
             }
         }
         img{
+            vertical-align: top;
             width: rem-calc(58);
             height: rem-calc(58);
         }
     }
-    .btn{
-        color: #79d8b1;
-        &:active{
-            background: #79d8b1;
-            color: #fff;
-        }
-    }
+    
 }
 // 底部操作栏
 @import "components/footer";

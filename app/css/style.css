@@ -155,6 +155,19 @@ body {
   min-height: 100%;
 }
 
+.bg-text {
+  position: fixed;
+  top: 3.7037rem;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  text-align: center;
+  color: #999;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+
 .search-box {
   position: fixed;
   top: 0;
@@ -162,7 +175,6 @@ body {
   left: 0;
   z-index: 9;
   max-width: 720px;
-  height: 2.59259rem;
   padding: 0.44444rem 0.88889rem;
   box-sizing: border-box;
   margin: 0 auto;
@@ -180,6 +192,7 @@ body {
   height: 2.59259rem;
   border-radius: 2.59259rem;
   background: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
 }
 .search-box [type=search] {
   height: 2.59259rem;
@@ -272,31 +285,81 @@ body {
   margin-top: 0.74074rem;
   background: #fff;
 }
-.module .title {
+.module .b-title {
   padding: 0.92593rem 1.11111rem;
   font-size: 1.03704rem;
   color: #999;
-}
-.module .content {
-  padding: 0 1.11111rem;
 }
 .module .btn {
   font-size: 0.88889rem;
   height: 1.77778rem;
   line-height: 1.77778rem;
   white-space: nowrap;
+  color: #3fd99a;
+}
+.module .btn:active {
+  background: #3fd99a;
+  color: #fff;
 }
 .module .block {
   padding: 0 0.92593rem;
-  border: 1px solid #79d8b1;
+  border: 1px solid #3fd99a;
   border-radius: 1.77778rem;
 }
-
-section.bibei .content {
+.module .preview-list .item {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.11111rem 1.11111rem;
+  border-top: 1px solid #edf2f5;
+}
+.module .preview-list .inner-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.module .preview {
+  border-radius: 0.37037rem;
+}
+.module .preview img {
+  width: 4.07407rem;
+  height: 4.07407rem;
+  vertical-align: top;
+}
+.module .description {
+  padding-left: 1rem;
+}
+.module .description h3 {
+  font-size: 1.18519rem;
+  color: #000;
+}
+.module .description .p1 {
+  line-height: 1.11111rem;
+  font-size: 0.88889rem;
+  color: #999;
+}
+.module .description .p2 {
+  line-height: 1.11111rem;
+  font-size: 0.88889rem;
+  color: #666;
+}
+
+section.bibei .b-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 1.11111rem;
   padding-bottom: 1.11111rem;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
@@ -321,15 +384,9 @@ section.bibei .list-box a:last-of-type {
   margin-right: 0;
 }
 section.bibei .list-box img {
+  vertical-align: top;
   width: 2.14815rem;
   height: 2.14815rem;
-}
-section.bibei .btn {
-  color: #79d8b1;
-}
-section.bibei .btn:active {
-  background: #79d8b1;
-  color: #fff;
 }
 
 .focus .footer {

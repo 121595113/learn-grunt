@@ -6,6 +6,7 @@ block append head
 
 block content
 	header.header
+		div.bg-text MADE IN YUTAO
 		div.search-box
 			label.logo 
 			div.inner-box
@@ -32,8 +33,8 @@ block content
 				p 专题
 	//- 装机必备
 	section.module.bibei
-		h2.title 装机必备
-		div.content
+		h2.b-title 装机必备
+		div.b-content
 			div.list-box
 				a(href='#')
 					img(src='images/pic/bibei/01.png')
@@ -46,6 +47,43 @@ block content
 				a(href='#')
 					img(src='images/pic/bibei/05.png')
 			button.btn.block 一键下载
+	//- 热门推荐
+	section.module
+		h2.b-title 热门推荐
+		div.b-content
+			ul.preview-list
+				li.item
+					dl.inner-box
+						dt.preview: img(src='images/pic/apps/001.png')
+						dd.description
+							h3 植物大战僵尸HD版
+							p.p1 64万次下载  |  117.71MB
+							p.p2 新版首发，功夫僵尸来袭！
+					button.btn.block 下载
+				li.item
+					dl.inner-box
+						dt.preview: img(src='images/pic/apps/002.png')
+						dd.description
+							h3 京东购物
+							p.p1 409万次下载  |  20.40MB
+							p.p2 充话费赢1999元大奖
+					button.btn.block 下载
+				li.item
+					dl.inner-box
+						dt.preview: img(src='images/pic/apps/003.png')
+						dd.description
+							h3 支付宝
+							p.p1 1227万次下载  |  38.79MB
+							p.p2 双12，支付宝口碑随机5折！
+					button.btn.block 下载
+				li.item
+					dl.inner-box
+						dt.preview: img(src='images/pic/apps/004.png')
+						dd.description
+							h3 不良人
+							p.p1 6.3万次下载  |  187.53MB
+							p.p2 3D成人武侠RPG手游震撼来袭
+					button.btn.block 下载
 block script
 	script(src='script/Require.js',data-main='script/index.js')
 		
