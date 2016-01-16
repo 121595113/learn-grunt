@@ -1,0 +1,126 @@
+.topbar{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 8;
+	display: flex;
+	width: 100%;
+	box-sizing:border-box;
+	padding: rem-calc(23);
+	justify-content:space-between;
+	a{
+		display: inline-block;
+		width: rem-calc(50);
+		height: rem-calc(48);
+		background-size: rem-calc(50 48);
+		background-repeat: no-repeat;
+	}
+	.user{
+		background-image: inline-image('user.png');
+	}
+	.theme{
+		background-image: inline-image('theme.png');
+	}
+	.setting{
+		background-image: inline-image('setting.png');
+	}
+	dd{
+		a{
+			margin-left: rem-calc(30);
+		}
+	}
+}
+// 一键内存加速
+.accelerate{
+	position: relative;
+	.contain{
+		height: rem-calc(590);
+		background: #26bf80;
+	}
+}
+.update{
+	margin-top: 0;
+	position: relative;
+	padding-bottom: rem-calc(40);
+	.b-content{
+		padding: rem-calc(0 30);
+	}
+	.list-box{
+		@include pie-clearfix;
+		a{
+			float: left;
+			margin-right: rem-calc(6);
+		}
+		img{
+			width: rem-calc(40);
+			height: rem-calc(40);
+			vertical-align: top;
+		}
+		p{
+			line-height: rem-calc(40);
+			span{
+				color: #ffab3d;
+			}
+		}
+	}
+	.btn{
+		position: absolute;
+		top: rem-calc(50);;
+		right: rem-calc(30);
+		width: rem-calc(120);
+		height: rem-calc(70);
+		&:after{
+			content: '';
+			display: inline-block;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			margin-top: rem-calc(-14);
+			width: rem-calc(15);
+			height: rem-calc(27);
+			background: image-url('jiantou.png') no-repeat;
+			background-size: rem-calc(14 27);
+		}
+		span{
+			padding: rem-calc(5 20);
+			border-radius: rem-calc(40);
+			background: #ffab3d;
+			color: #fff;
+		}
+	}
+}
+.tab-grid{
+	margin-top: rem-calc(20);
+	user-select:none;
+	table{
+		width: 100%;
+		background: #fff;
+	}
+	tr{
+		&:last-of-type{
+			td{
+				border-bottom-width: 0;
+			}
+		}
+	}
+	td{
+		width: percentage(1/3);
+		border: solid #edf2f5;
+		border-width: 0 1px 1px 0;
+		&:nth-of-type(3){
+			border-right-width:0; 
+		}
+	}
+	button{
+		display: block;
+		width: 100%;
+		height: rem-calc(200);
+		box-sizing:border-box;
+		&:active{
+			background: #edf2f5;
+		}
+		span{
+			display: inline-block;
+		}
+	}
+}

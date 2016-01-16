@@ -3,3 +3,6 @@ $bar: sprite-map("bar/*.png", $spacing: 4px);
 // hot-tab
 $hot:sprite-map("hot/*.png",$spacing: 4px);
 @include rem-sprites($hot);
+// 管理页面图标
+$manager:sprite-map("manager/*.png");
+@include rem-sprites($manager);

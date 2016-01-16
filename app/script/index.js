@@ -54,6 +54,10 @@
             $(document).on('scroll', function(event) {
                 event.preventDefault();
                 var _scrollTop = $('body').scrollTop() || $('html').scrollTop();
+                $('#search').val(_scrollTop)
+                if (_scrollTop<=0) {
+                    $('html').scrollTop=1;
+                };
                 if (_scrollTop >= 80) {
                     _scrollTop = 80;
                 }
@@ -69,6 +73,7 @@
                 }
 
             });
+
 
         })
     })

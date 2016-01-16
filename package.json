@@ -1,7 +1,8 @@
 {
-  "name": "grunt_tutorial",
-  "description": "An example of how to set up Grunt for web development.",
-  "author": "yutao 121595113@qq.com",
+  "name": "手机助手",
+  "version": "1.0.0",
+  "description": "2345前端比赛手机助手页面制作",
+  "author": "yutao",
   "dependencies": {},
   "engine": "node >= 0.10",
   "devDependencies": {

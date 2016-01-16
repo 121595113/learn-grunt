@@ -49,7 +49,7 @@ module.exports = function(grunt) {
         compass: {
             development: {
                 options: {
-                    importPath:'<%= config.app %>/_source/_function/',
+                    importPath: '<%= config.app %>/_source/_function/',
                     sassDir: '<%= config.app %>/_source/sass/',
                     cssDir: '<%= config.app %>/css/',
                     imagesDir: '<%= config.app %>/images/',
@@ -89,7 +89,7 @@ module.exports = function(grunt) {
                     cwd: '<%= config.app %>/css',
                     src: ['{,*/}*.css'],
                     dest: '<%= config.dist %>/css',
-                    ext: '.css'
+                    // ext: '.css'
                 }]
             }
         },
@@ -99,32 +99,41 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= config.app %>/images/',
-                    src: '{,*/}*.{gif,jpeg,jpg,png}',
+                    src: '**/*.{gif,jpeg,jpg,png}',
                     dest: '<%= config.dist %>/images/'
                 }, {
                     expand: true,
                     cwd: '<%= config.app %>',
                     src: '*.{ico,png}',
                     dest: '<%= config.dist %>'
-                },{
+                }, {
                     expand: true,
                     cwd: '<%= config.app %>/pic/',
                     src: '{,*/}*.{gif,jpeg,jpg,png}',
                     dest: '<%= config.dist %>/pic/'
-                } ]
+                }]
             }
         },
 
-        // uglify: {
-        //     build: {
-        //         options: {
-        //             mangle: false
-        //         },
-        //         files: {
-        //             '<%= config.dist %>/application.js': ['<%= config.dist %>/**/*.js']
-        //         }
-        //     }
-        // },
+        uglify: {
+            options: {
+                banner: '/*! 项目名称：<%= pkg.name %> 版本：<%= pkg.version %> ' +
+                    '时间：<%= grunt.template.today("yyyy-mm-dd") %> 作者：<%= pkg.author %>*/\n'
+            },
+            build: {
+                // 动态文件映射，
+                // 当任务运行时会自动在 "src/bin/" 目录下查找 "**/*.js" 并构建文件映射，
+                // 添加或删除文件时不需要更新 Gruntfile。
+                files: [{
+                    expand: true, // 启用动态扩展
+                    cwd: '<%= config.app %>/script/', // 源文件匹配都相对此目录
+                    src: ['**/*.js'], // 匹配模式
+                    dest: '<%= config.dist %>/script/', // 目标路径前缀
+                    ext: '.js', // 目标文件路径中文件的扩展名
+                    extDot: 'last' // 扩展名始于文件名的第一个点号
+                }, ],
+            }
+        },
 
         jade: {
             compile: {
@@ -169,28 +178,28 @@ module.exports = function(grunt) {
         },
 
         browserSync: {
-          options: {
-            notify: false,
-            background: true,
-            watchOptions: {
-              ignored: ''
-            }
-          },
-          livereload: {
             options: {
-              files: [
-                '<%= config.app %>/{,*/}*.html',
-                '<%= config.app %>/**/*.css',
-                '<%= config.app %>/images/{,*/}*',
-                '<%= config.app %>/**/*.js'
-              ],
-              port: 9000,
-              server: {
-                baseDir: ['<%= config.app %>'],
-                
-              }
+                notify: false,
+                background: true,
+                watchOptions: {
+                    ignored: ''
+                }
+            },
+            livereload: {
+                options: {
+                    files: [
+                        '<%= config.app %>/{,*/}*.html',
+                        '<%= config.app %>/**/*.css',
+                        '<%= config.app %>/images/{,*/}*',
+                        '<%= config.app %>/**/*.js'
+                    ],
+                    port: 9000,
+                    server: {
+                        baseDir: ['<%= config.app %>'],
+
+                    }
+                }
             }
-          }
         },
 
 
@@ -230,6 +239,7 @@ module.exports = function(grunt) {
         'cssmin',
         'imagemin',
         'jade',
+        'uglify',
         'copy',
     ]);
 
