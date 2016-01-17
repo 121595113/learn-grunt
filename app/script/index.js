@@ -117,6 +117,34 @@
 
             });
 
+            // 搜索词
+            var chars = ['开心消消乐', '支付宝', '经典单机游戏100款', '单机斗地主…'];
+
+            function generateMixed(n, Arrys) {
+                var Arrys = Arrys || [],
+                    res = "";
+                for (var i = 0; i < n; i++) {
+                    var id = Math.floor(Math.random() * Arrys.length);
+                    res += Arrys[id];
+                }
+                return res;
+            }
+
+            var T2 = null,
+                placeholder = function() {
+                    T2 = setTimeout(function() {
+                        $('#search').prop('placeholder', '大家都在搜：' + generateMixed(1, chars));
+                        placeholder();
+                    }, 3500)
+                }
+            placeholder();
+            $('#search').focus(function(event) {
+                clearTimeout(T2)
+            }).blur(function(event) {
+                placeholder();
+            });
+
+            // ...
         });
 
     })
