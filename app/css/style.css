@@ -213,10 +213,6 @@ button {
   border: 1px solid #3fd99a;
   color: #3fd99a;
 }
-.block:active {
-  background: #3fd99a;
-  color: #fff;
-}
 
 .white {
   border: 1px solid #fff;
@@ -225,6 +221,10 @@ button {
 .white:active {
   background: #fff;
   color: #3fd99a;
+}
+
+[data-module=a], [data-module=b], [data-module=c] {
+  margin-top: 0.74074rem;
 }
 
 html {
@@ -238,21 +238,8 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-.bg-text {
-  position: fixed;
-  top: 3.7037rem;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  text-align: center;
-  color: #999;
-  -webkit-transform: scale(0);
-      -ms-transform: scale(0);
-          transform: scale(0);
-}
-
 .search-box {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   left: 0;
@@ -364,16 +351,16 @@ body {
   color: #999;
 }
 
-.module {
-  margin-top: 0.74074rem;
+[data-module=a] {
   background: #fff;
 }
-.module .b-title {
+[data-module=a] .a-title {
   padding: 0.92593rem 1.11111rem;
   font-size: 1.03704rem;
   color: #999;
 }
-.module .preview-list .item {
+[data-module=a] .preview-list .item {
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -389,41 +376,46 @@ body {
   padding: 1.11111rem 1.11111rem;
   border-top: 1px solid #edf2f5;
 }
-.module .preview-list .inner-box {
+[data-module=a] .preview-list .inner-box {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
-.module .preview {
+[data-module=a] .btn {
+  position: relative;
+  z-index: 1;
+  min-width: 4.44444rem;
+}
+[data-module=a] .preview {
   border-radius: 0.37037rem;
 }
-.module .preview img {
+[data-module=a] .preview img {
   width: 4.07407rem;
   height: 4.07407rem;
   vertical-align: top;
 }
-.module .description {
+[data-module=a] .description {
   padding-left: 1rem;
 }
-.module .description h3 {
+[data-module=a] .description h3 {
   font-size: 1.18519rem;
   color: #000;
 }
-.module .description .p1 {
+[data-module=a] .description .p1 {
   line-height: 1.11111rem;
   font-size: 0.88889rem;
   color: #999;
 }
-.module .description .p2 {
+[data-module=a] .description .p2 {
   line-height: 1.11111rem;
   font-size: 0.88889rem;
   color: #666;
 }
-.module .description [data-icon] {
+[data-module=a] .description [data-icon] {
   color: #26bf80;
 }
-.module .description [data-icon]:before {
+[data-module=a] .description [data-icon]:before {
   content: '';
   display: inline-block;
   float: left;
@@ -433,7 +425,7 @@ body {
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDplNzgzMWMyMS0xMTYzLWE0NDctODVkMi04MjY4NDUyMmI1Y2EiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDlDN0FDRjBCNDBGMTFFNTg1ODVBMUM4QjlEMUMzMUEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDlDN0FDRUZCNDBGMTFFNTg1ODVBMUM4QjlEMUMzMUEiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpiNTBmNTNlYi02MGE3LTQwYjQtOTkyNy01ZjQzNjc2ZTUxYWIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6ZTc4MzFjMjEtMTE2My1hNDQ3LTg1ZDItODI2ODQ1MjJiNWNhIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+RxUnBwAAAVVJREFUeNpi/P//PwM6UD/QqASk5gKxORCfA+Lkmw71N6FyCkCqB4j1gPg4EJcC5V6hm8HEgB2sAOIdQCwJxGuAeDvQQE4g5gey9wHxKSAOBOL3QLwamwEsOAwGucYO6JIfQHoC0ECQy2OAWBCIDwPFu6CuLwVS37AZgMvFx6EugoHFQBwCxL5AvARJ3BWIL5BicCUQ9wFdpAnlHwViMyDWBuLLUNfKAKnZQFxLtMFAr54AUgVAvB9oQAyQ/xHI/g7EnED2C6CYA5B9CIi7gPwd2MxgVNvf4AakJwOxGgN1wC0gzgVF3gJo7FMLqIGDCOji/yAMSs/YMDY5QupBmImBRgAUxrCsJ4RDzTsscu8IqEfJIO/wOOAdkWIoOe89lC1IpVCAmIce6ORGHrp+mkXeqMFD2GBGWJ0HLAqfUaEwegEsRiXRXZwCkqDA0KegShfGAQgwABad1bbmT3RyAAAAAElFTkSuQmCC') no-repeat;
   background-size: 0.81481rem 0.81481rem;
 }
-.module .description .hot, .module .description .libao {
+[data-module=a] .description .hot, [data-module=a] .description .libao {
   position: relative;
   top: -0.14815rem;
   margin-left: 0.2963rem;
@@ -441,20 +433,35 @@ body {
   border: 1px solid;
   font-size: 0.81481rem;
 }
-.module .description .hot {
+[data-module=a] .description .hot {
   border-color: #ff9914;
   color: #ff9914;
 }
-.module .description .libao {
+[data-module=a] .description .libao {
   border-color: #26bf80;
   color: #26bf80;
 }
-
-.module-B {
-  margin-top: 0.74074rem;
+[data-module=a] [state=active] .jindu, [data-module=a] [state=stop] .jindu {
+  visibility: visible;
+}
+[data-module=a] [state=active] .btn, [data-module=a] [state=stop] .btn {
+  background: #fff;
+}
+[data-module=a] [state=active] .btn {
+  background: #3fd99a;
+  color: #fff;
+}
+[data-module=a] .jindu {
+  position: absolute;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(5, 173, 108, 0.5);
+  pointer-events: none;
 }
 
-section.bibei .b-content {
+section.bibei .a-content {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -489,22 +496,6 @@ section.bibei .list-box img {
   height: 2.14815rem;
 }
 
-.pjun .b-title h2 {
-  font-size: 1.18519rem;
-  color: #333;
-}
-.pjun .b-title p {
-  margin-top: 0.74074rem;
-  font-size: 0.88889rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.pjun .imgbox img {
-  max-width: 100%;
-  vertical-align: top;
-}
-
 .Classic {
   background: url('../images/bg01.jpg?1452911326') no-repeat;
   background-size: 100% auto;
@@ -525,47 +516,47 @@ section.bibei .list-box img {
   background-size: 1.03704rem 1.03704rem;
 }
 
-.module-B {
+[data-module=b] {
   padding-bottom: 1.48148rem;
 }
-.module-B .b-title {
+[data-module=b] .b-title {
   padding: 1.48148rem 0.92593rem;
   font-size: 1.18519rem;
   text-align: right;
 }
-.module-B .b-title h2 {
+[data-module=b] .b-title h2 {
   float: left;
 }
-.module-B .b-title .more {
+[data-module=b] .b-title .more {
   font-size: 1.03704rem;
   line-height: 1;
 }
-.module-B .list {
+[data-module=b] .list {
   *zoom: 1;
 }
-.module-B .list:after {
+[data-module=b] .list:after {
   content: "";
   display: table;
   clear: both;
 }
-.module-B .item {
+[data-module=b] .item {
   float: left;
   width: 25%;
   text-align: center;
 }
-.module-B .item a {
+[data-module=b] .item a {
   display: block;
 }
-.module-B .item img {
+[data-module=b] .item img {
   display: block;
   width: 4.07407rem;
   height: 4.07407rem;
   margin: 0 auto;
 }
-.module-B .item .inner-box {
+[data-module=b] .item .inner-box {
   margin: 0 0.59259rem;
 }
-.module-B .item p {
+[data-module=b] .item p {
   padding-top: 0.59259rem;
   font-size: 0.88889rem;
   color: #fff;
@@ -573,8 +564,32 @@ section.bibei .list-box img {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.module-B .item .btn {
+[data-module=b] .item .btn {
   margin-top: 0.59259rem;
+}
+
+[data-module=c] {
+  background: #fff;
+}
+[data-module=c] .c-title {
+  padding: 0.92593rem 1.11111rem;
+  font-size: 1.03704rem;
+  color: #999;
+}
+[data-module=c] .c-title h2 {
+  font-size: 1.18519rem;
+  color: #333;
+}
+[data-module=c] .c-title p {
+  margin-top: 0.74074rem;
+  font-size: 0.88889rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+[data-module=c] .imgbox img {
+  max-width: 100%;
+  vertical-align: top;
 }
 
 .cai .b-title h2 {
@@ -665,13 +680,27 @@ section.bibei .list-box img {
   height: 21.85185rem;
   background: #26bf80;
 }
+.accelerate button {
+  position: absolute;
+  bottom: 2.66667rem;
+  left: 50%;
+  display: block;
+  width: 8rem;
+  height: 1.77778rem;
+  margin-left: -4rem;
+  border-radius: 1.77778rem;
+  border: 1px solid #fff;
+  font-size: 0.88889rem;
+  text-align: center;
+  color: #fff;
+}
 
 .update {
   margin-top: 0;
   position: relative;
   padding-bottom: 1.48148rem;
 }
-.update .b-content {
+.update .a-content {
   padding: 0 1.11111rem;
 }
 .update .list-box {
@@ -869,5 +898,4 @@ section.bibei .list-box img {
   height: 1.81481rem;
   background-position: 0 -17.66667rem;
 }
-
 /*# sourceMappingURL=style.css.map */

@@ -20,10 +20,10 @@ button {
     @extend %btn;
     border: 1px solid $btn-color;
     color: $btn-color;
-    &:active {
-        background: $btn-color;
-        color: #fff;
-    }
+    // &:active {
+    //     background: $btn-color;
+    //     color: #fff;
+    // }
 }
 
 .white {

@@ -37,12 +37,26 @@
 		height: rem-calc(590);
 		background: #26bf80;
 	}
+	button{
+		position: absolute;
+		bottom: rem-calc(72);
+		left: 50%;
+		display: block;
+		width: rem-calc(216);
+		height: rem-calc(48);
+		margin-left: rem-calc(-108);
+		border-radius: rem-calc(48);
+		border: 1px solid #fff;
+		font-size: rem-calc(24);
+		text-align: center;
+		color: #fff;
+	}
 }
 .update{
 	margin-top: 0;
 	position: relative;
 	padding-bottom: rem-calc(40);
-	.b-content{
+	.a-content{
 		padding: rem-calc(0 30);
 	}
 	.list-box{

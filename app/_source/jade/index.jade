@@ -6,12 +6,11 @@ block append head
 
 block content
 	header.header
-		div.bg-text MADE IN YUTAO
 		div.search-box
-			label.logo 
+			label.logo
 			div.inner-box
 				input(type='search',id='search',placeholder='大家都在搜：开心消消乐')
-				button.QR 
+				button.QR
 	include ./components/swiper
 	//- 热门标签
 	section.hot-tab
@@ -32,9 +31,9 @@ block content
 				div.hot-icon05
 				p 专题
 	//- 装机必备
-	section.module.bibei
-		h2.b-title 装机必备
-		div.b-content
+	section.bibei(data-module='a')
+		h2.a-title 装机必备
+		div.a-content
 			div.list-box
 				a(href='#')
 					img(src='images/pic/bibei/01.png')
@@ -48,11 +47,12 @@ block content
 					img(src='images/pic/bibei/05.png')
 			button.btn.block 一键下载
 	//- 热门推荐
-	section.module.recommend
-		h2.b-title 热门推荐
-		div.b-content
+	section.recommend(data-module='a')
+		h2.a-title 热门推荐
+		div.a-content
 			ul.preview-list
-				li.item
+				li.item(state='stop')
+					div.jindu(style='width:0%;')
 					dl.inner-box
 						dt.preview: img(src='images/pic/apps/001.png')
 						dd.description
@@ -60,7 +60,8 @@ block content
 							p.p1 64万次下载  |  117.71MB
 							p.p2 新版首发，功夫僵尸来袭！
 					button.btn.block 下载
-				li.item
+				li.item(state='stop')
+					div.jindu(style='width:0%;')
 					dl.inner-box
 						dt.preview: img(src='images/pic/apps/002.png')
 						dd.description
@@ -68,7 +69,8 @@ block content
 							p.p1 409万次下载  |  20.40MB
 							p.p2(data-icon='true') 充话费赢1999元大奖
 					button.btn.block 下载
-				li.item
+				li.item(state='stop')
+					div.jindu(style='width:0%;')
 					dl.inner-box
 						dt.preview: img(src='images/pic/apps/003.png')
 						dd.description
@@ -76,7 +78,8 @@ block content
 							p.p1 1227万次下载  |  38.79MB
 							p.p2 双12，支付宝口碑随机5折！
 					button.btn.block 下载
-				li.item
+				li.item(state='stop')
+					div.jindu(style='width:0%;')
 					dl.inner-box
 						dt.preview: img(src='images/pic/apps/004.png')
 						dd.description
@@ -85,19 +88,20 @@ block content
 							p.p2(data-icon='true') 3D成人武侠RPG手游震撼来袭
 					button.btn.block 下载
 	//- P君带你飞【第26期】
-	section.module.pjun
-		div.b-title
+	section.pjun(data-module='c')
+		div.c-title
 			h2 P君带你飞【第26期】
 			p 由甄寰传原班人马打造的古装宫斗大戏《芈月传》终于上映由甄寰传原班人马打
-		div.b-content
+		div.c-content
 			div.imgbox: a(href='#')
 				img(src='images/pic/banner/banner04.jpg')
 	//- 热门游戏
-	section.module.recommend
-		h2.b-title 热门游戏
-		div.b-content
+	section.recommend(data-module='a')
+		h2.a-title 热门游戏
+		div.a-content
 			ul.preview-list
-				li.item
+				li.item(state='stop')
+					div.jindu(style='width:0%;')
 					dl.inner-box
 						dt.preview: img(src='images/pic/apps/005.png')
 						dd.description
@@ -105,7 +109,8 @@ block content
 							p.p1 64万次下载  |  117.71MB
 							p.p2(data-icon='true') 机票红包免费拿
 					button.btn.block 下载
-				li.item
+				li.item(state='stop')
+					div.jindu(style='width:0%;')
 					dl.inner-box
 						dt.preview: img(src='images/pic/apps/006.png')
 						dd.description
@@ -113,7 +118,8 @@ block content
 							p.p1 409万次下载  |  20.40MB
 							p.p2 一亿乐迷狂热推荐
 					button.btn.block 下载
-				li.item
+				li.item(state='stop')
+					div.jindu(style='width:0%;')
 					dl.inner-box
 						dt.preview: img(src='images/pic/apps/007.png')
 						dd.description
@@ -121,7 +127,8 @@ block content
 							p.p1 1227万次下载  |  38.79MB
 							p.p2 一亿乐迷狂热推荐
 					button.btn.block 下载
-				li.item
+				li.item(state='stop')
+					div.jindu(style='width:0%;')
 					dl.inner-box
 						dt.preview: img(src='images/pic/apps/008.png')
 						dd.description
@@ -130,7 +137,7 @@ block content
 							p.p2 最热门的跑酷游戏
 					button.btn.block 下载
 	//- 经典单机游戏100款
-	section.module-B.Classic
+	section.Classic(data-module='b')
 		div.b-title
 			h2 经典单机游戏100款
 			a.more(href='javascript:;') 更多
@@ -161,11 +168,12 @@ block content
 							p 地铁跑酷（东地铁跑酷（东
 						button.btn.white 下载
 	//- 热门应用
-	section.module.recommend
-		h2.b-title 热门应用
-		div.b-content
+	section.recommend(data-module='a')
+		h2.a-title 热门应用
+		div.a-content
 			ul.preview-list
-				li.item
+				li.item(state='stop')
+					div.jindu(style='width:0%;')
 					dl.inner-box
 						dt.preview: img(src='images/pic/apps/005.png')
 						dd.description
@@ -173,7 +181,8 @@ block content
 							p.p1 64万次下载  |  117.71MB
 							p.p2(data-icon='true') 机票红包免费拿
 					button.btn.block 下载
-				li.item
+				li.item(state='stop')
+					div.jindu(style='width:0%;')
 					dl.inner-box
 						dt.preview: img(src='images/pic/apps/006.png')
 						dd.description
@@ -181,7 +190,8 @@ block content
 							p.p1 409万次下载  |  20.40MB
 							p.p2 一亿乐迷狂热推荐
 					button.btn.block 下载
-				li.item
+				li.item(state='stop')
+					div.jindu(style='width:0%;')
 					dl.inner-box
 						dt.preview: img(src='images/pic/apps/007.png')
 						dd.description
@@ -189,7 +199,8 @@ block content
 							p.p1 1227万次下载  |  38.79MB
 							p.p2 一亿乐迷狂热推荐
 					button.btn.block 下载
-				li.item
+				li.item(state='stop')
+					div.jindu(style='width:0%;')
 					dl.inner-box
 						dt.preview: img(src='images/pic/apps/008.png')
 						dd.description
@@ -198,7 +209,7 @@ block content
 							p.p2 最热门的跑酷游戏
 					button.btn.block 下载
 	//- 猜你喜欢
-	section.module-B.cai
+	section.cai(data-module='b')
 		div.b-title
 			h2 猜你喜欢
 			a.more(href='javascript:;') 换一换
@@ -229,11 +240,12 @@ block content
 							p 网易火车票
 						button.btn 下载
 	//- 热门游戏
-	section.module.recommend
-		h2.b-title 热门游戏
-		div.b-content
+	section.recommend(data-module='a')
+		h2.a-title 热门游戏
+		div.a-content
 			ul.preview-list
-				li.item
+				li.item(state='stop')
+					div.jindu(style='width:0%;')
 					dl.inner-box
 						dt.preview: img(src='images/pic/apps/009.png')
 						dd.description
@@ -241,7 +253,8 @@ block content
 							p.p1 64万次下载  |  117.71MB
 							p.p2 宇宙超人气三消休闲游戏
 					button.btn.block 下载
-				li.item
+				li.item(state='stop')
+					div.jindu(style='width:0%;')
 					dl.inner-box
 						dt.preview: img(src='images/pic/apps/013.png')
 						dd.description
@@ -249,7 +262,8 @@ block content
 							p.p1 409万次下载  |  20.40MB
 							p.p2 风靡中国超萌塔防游戏
 					button.btn.block 下载
-				li.item
+				li.item(state='stop')
+					div.jindu(style='width:0%;')
 					dl.inner-box
 						dt.preview: img(src='images/pic/apps/007.png')
 						dd.description
@@ -257,7 +271,8 @@ block content
 							p.p1 1227万次下载  |  38.79MB
 							p.p2 团购美食外卖电影
 					button.btn.block 下载
-				li.item
+				li.item(state='stop')
+					div.jindu(style='width:0%;')
 					dl.inner-box
 						dt.preview: img(src='images/pic/apps/008.png')
 						dd.description
@@ -268,4 +283,3 @@ block content
 	div.smile 亲，到底了
 block script
 	script(src='script/Require.js',data-main='script/index.js')
-		

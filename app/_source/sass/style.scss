@@ -4,6 +4,11 @@ $reset:true;
 $Response:true;
 @import "moblie-mixin";
 @import "components/sprites", "components/common", "components/themes";
+// 模块间隔
+%module-space {
+    margin-top: rem-calc(20);
+}
+
 html {
     background: #edf2f5;
 }
@@ -12,27 +17,12 @@ body {
     max-width: 720px;
     margin: 0 auto;
     padding-bottom: rem-calc(99);
-    -webkit-overflow-scrolling:touch; 
-}
-// .wrapper{
-//     height: 100%;
-//     overflow: auto;
-// }
-// 背景文案
-.bg-text {
-    position: fixed;
-    top: rem-calc(100);
-    left: 0;
-    right: 0;
-    z-index: -1;
-    text-align: center;
-    color: #999;
-    transform: scale(0);
+    -webkit-overflow-scrolling: touch;
 }
 
 // 搜索框
 .search-box {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     left: 0;
@@ -144,16 +134,17 @@ body {
     }
 }
 
-.module {
-    margin-top: rem-calc(20);
+[data-module=a] {
+    @extend %module-space;
     background: #fff;
-    .b-title {
+    .a-title {
         padding: rem-calc(25 30);
         font-size: rem-calc(28);
         color: #999;
     }
     .preview-list {
         .item {
+            position: relative;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -163,6 +154,11 @@ body {
         .inner-box {
             display: flex;
         }
+    }
+    .btn{
+        position: relative;
+        z-index: 1;
+        min-width: rem-calc(120);
     }
     // 缩略图
     .preview {
@@ -224,15 +220,34 @@ body {
         @include Label(hot, #ff9914);
         @include Label(libao, #26bf80);
     }
-}
-
-.module-B {
-    margin-top: rem-calc(20);
+    [state=active],[state=stop]{
+        .jindu{
+            visibility: visible;
+        }
+        .btn{
+            background: #fff;
+        }
+    }
+    [state=active]{
+        .btn{
+            background: $btn-color;
+            color: #fff;
+        }
+    }
+    .jindu{
+        position: absolute;
+        visibility: hidden;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(5, 173, 108, 0.5);
+        pointer-events: none;
+    }
 }
 
 // 装机必备
 section.bibei {
-    .b-content {
+    .a-content {
         display: flex;
         padding: rem-calc(0 30);
         padding-bottom: rem-calc(30);
@@ -252,29 +267,6 @@ section.bibei {
             vertical-align: top;
             width: rem-calc(58);
             height: rem-calc(58);
-        }
-    }
-}
-
-// p君带你飞
-.pjun {
-    .b-title {
-        h2 {
-            font-size: rem-calc(32);
-            color: #333;
-        }
-        p {
-            margin-top: rem-calc(20);
-            font-size: rem-calc(24);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-    }
-    .imgbox {
-        img {
-            max-width: 100%;
-            vertical-align: top;
         }
     }
 }
@@ -300,7 +292,8 @@ section.bibei {
     }
 }
 
-.module-B {
+[data-module=b] {
+    @extend %module-space;
     padding-bottom: rem-calc(40);
     .b-title {
         padding: rem-calc(40 25);
@@ -343,6 +336,34 @@ section.bibei {
         }
         .btn {
             margin-top: rem-calc(16);
+        }
+    }
+}
+
+// p君带你飞
+[data-module=c] {
+    @extend %module-space;
+    background: #fff;
+    .c-title {
+        padding: rem-calc(25 30);
+        font-size: rem-calc(28);
+        color: #999;
+        h2 {
+            font-size: rem-calc(32);
+            color: #333;
+        }
+        p {
+            margin-top: rem-calc(20);
+            font-size: rem-calc(24);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    .imgbox {
+        img {
+            max-width: 100%;
+            vertical-align: top;
         }
     }
 }

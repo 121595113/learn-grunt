@@ -25,7 +25,7 @@
 
             // 底部操作栏
             var Tap = "ontouchstart" in window ? "tap" : "click";
-            $('.nav li').on("click", function(e) {
+            $('.nav li').on(Tap, function(e) {
                 e.stopPropagation();
                 e.preventDefault();
                 $(this).addClass('active').siblings().removeClass('active')
@@ -44,37 +44,80 @@
                     } else {
                         $('body').removeClass('focus');
                     }
-                    // $('#search').val(wh - newH)
                     wh = newH;
                 }
             })
 
-            // 监听滚动事件
-            var searchbox = $('#search').parents('.search-box');
-            $(document).on('scroll', function(event) {
+            // 一键加载
+            var flag = true;
+            $('.jiasu').on(Tap, function(event) {
                 event.preventDefault();
-                var _scrollTop = $('body').scrollTop() || $('html').scrollTop();
-                $('#search').val(_scrollTop)
-                if (_scrollTop<=0) {
-                    $('html').scrollTop=1;
-                };
-                if (_scrollTop >= 80) {
-                    _scrollTop = 80;
+                var _this = $(this);
+                if (flag) {
+                    _this.text('加速中...');
+                    setTimeout(function() {
+                        _this.text('加速完成')
+                        setTimeout(function() {
+                            _this.text('一键内存加速')
+                            flag = true;
+                        }, 1000)
+                    }, 3000)
+                } else {
+                    return;
                 }
-                if (_scrollTop >= 0) {
-                    searchbox.css({
-                        'background': 'rgba(38,191,128,' + _scrollTop / 100 + ')'
-                    })
-                }else{
-                    var val=-_scrollTop/100>1.2?1.2:-_scrollTop/100;
-                    $('.bg-text').css({
-                        'transform': 'scale('+ val+')'
-                    })
-                }
+                flag = false;
+            });
+
+            // 小数转换成百分数
+            Number.prototype.toPercent = function(parm) {
+                var parm = parm || 0;
+                return (Math.round(this * 10000) / 100).toFixed(parm) + '%';
+            };
+            // 应用下载
+            $('.preview-list .btn').each(function(index, el) {
+
+                var timer = null;
+                $(this).on(Tap, function(event) {
+                    event.preventDefault();
+                    var _this = $(this),
+                        _parent = _this.parents('.item'),
+                        dataSize = _parent.width();
+
+                    clearTimeout(timer);
+
+                    if (_parent.attr('state') == 'active') {
+                        _parent.attr('state', 'stop');
+                        _this.text('下载')
+
+                    } else if (_parent.attr('state') == 'stop') {
+                        var calc = function() {
+                            var _curSize = _parent.find('.jindu').width(),
+                                $val = (_curSize / dataSize);
+                            _this.text($val.toPercent())
+                            if ($val >= 1) {
+                                _this.text('安装')
+                                _parent.attr('state', 'finish');
+                                return;
+                            };
+                            $val += 0.01;
+                            _parent.find('.jindu').css({
+                                'width': $val.toPercent()
+                            })
+                            timer = setTimeout(function() {
+                                calc();
+                            }, 250)
+                        };
+                        calc();
+                        _parent.attr('state', 'active');
+
+                    } else if (_parent.attr('state') == 'finish') {
+                        return;
+                    }
+                });
 
             });
 
+        });
 
-        })
     })
 })();
