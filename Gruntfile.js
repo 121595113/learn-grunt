@@ -196,7 +196,7 @@ module.exports = function(grunt) {
                     port: 9000,
                     server: {
                         baseDir: ['<%= config.app %>'],
-
+                        index:"home.html"
                     }
                 }
             }

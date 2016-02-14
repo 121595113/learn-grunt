@@ -1,4 +1,5 @@
 .git
+dist
 *.scssc
 .sass-cache
 node_modules
