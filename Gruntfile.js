@@ -197,7 +197,9 @@ module.exports = function(grunt) {
                     server: {
                         baseDir: ['<%= config.app %>'],
                         index:"home.html"
-                    }
+                    },
+                    open: "external",
+                    // browser: "chrome"
                 }
             }
         },
